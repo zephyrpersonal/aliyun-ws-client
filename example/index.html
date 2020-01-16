@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      main {
+        padding: 20px;
+        height: calc(100% - 60px);
+      }
+      #logs {
+        max-height: calc(100% - 60px);
+        overflow-y: auto;
+        width: 100%;
+        word-break: break-all;
+        padding: 0 30px 30px;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+      }
+      #logs p {
+        margin: 5px 0;
+        font-size: 12px;
+      }
+      .message-tag {
+        width: 60px;
+        display: inline-block;
+        font-size: 12px;
+        flex-grow: 0;
+      }
+      .message-send {
+        color: green;
+      }
+      .message-recieve {
+        color: rebeccapurple;
+      }
+      input {
+        height: 30px;
+        width: 180px;
+        border: 1px solid #ddd;
+        margin: 0;
+        padding: 0 10px;
+        outline: 0;
+      }
+      button {
+        height: 30px;
+        margin: 0 0 0 5px;
+        padding: 0 20px;
+        outline: 0;
+        border: 1px solid #ddd;
+      }
+      .timestamp {
+        color: #fff;
+        margin-right: 5px;
+        font-size: 12px;
+        background: #999;
+        padding: 0 5px;
+        display: inline-block;
+        line-height: 14px;
+        font-family: Consolas, Monaco, monospace;
+        
+        flex-grow: 0;
+      }
+      .log {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+      }
+      .log p {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app"></main>
+  </body>
+  <script src="./main.tsx"></script>
+</html>
