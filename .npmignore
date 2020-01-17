@@ -1,0 +1,8 @@
+.cache
+dist
+example
+lib
+node_modules
+.env
+tsconfig.json
+webpack.config.js

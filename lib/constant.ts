@@ -1,6 +1,10 @@
-export const API_GATEWAY_HB_INTERVAL = 20 * 1000
+export const API_GATEWAY_HB_INTERVAL_DEFAULT = 20 * 1000
 export const MESSAGE_COMMAND_RG = 'RG'
 export const MESSAGE_COMMAND_RO = 'RO'
 export const MESSAGE_COMMAND_H1 = 'H1'
 export const MESSAGE_COMMAND_HO = 'HO'
 export const MESSAGE_COMMAND_NF = 'NF'
+export const API_RESPONSE = 'API_RESPONSE'
+
+export const API_TYPE_REGISTER = 'REGISTER'
+export const API_TYPE_UNREGISTER = 'UNREGISTER'

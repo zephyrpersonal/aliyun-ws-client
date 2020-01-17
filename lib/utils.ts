@@ -1,9 +1,15 @@
-import uuid from 'uuid'
-import { MESSAGE_COMMAND_RO, MESSAGE_COMMAND_HO, MESSAGE_COMMAND_NF } from './constant'
+import uuid from 'uuid/v4'
+import {
+  MESSAGE_COMMAND_RO,
+  MESSAGE_COMMAND_HO,
+  MESSAGE_COMMAND_NF,
+  API_RESPONSE,
+  API_TYPE_REGISTER,
+  API_TYPE_UNREGISTER
+} from './constant'
 
 export const generateDeviceId = () => {
-  return uuid
-    .v4()
+  return uuid()
     .replace(/-/g, '')
     .substr(0, 8)
 }
@@ -43,5 +49,17 @@ export const parseMessage = (message: string) => {
     }
   }
 
-  return { type: 'UNKNOWN', data: null }
+  const apiResponseMessage = JSON.parse(message)
+  console.log(apiResponseMessage.body)
+  const body = JSON.parse(apiResponseMessage.body)
+
+  if ([API_TYPE_REGISTER, API_TYPE_UNREGISTER].includes(body._apiType)) {
+    return {
+      type: body._apiType,
+      data: apiResponseMessage.status === 200,
+      message: body.message
+    }
+  }
+
+  return { type: API_RESPONSE, data: apiResponseMessage }
 }
